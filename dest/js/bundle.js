@@ -6,14 +6,14 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-/***/ (() => {
+/***/ (function() {
 
 eval("var test = function test() {\n  console.log('test');\n};\n\ntest();\n\n//# sourceURL=webpack://web_template_gulp/./src/js/index.js?");
 

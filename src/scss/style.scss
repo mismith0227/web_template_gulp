@@ -6,6 +6,11 @@ body {
   }
 }
 
-span {
+.test {
+  display: flex;
   user-select: none;
+}
+
+.grid {
+  display: grid;
 }

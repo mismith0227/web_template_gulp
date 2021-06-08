@@ -3,8 +3,13 @@ body {
   body h1 {
     font-size: 80px; }
 
-span {
+.test {
+  display: -webkit-box;
+  display: flex;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+.grid {
+  display: grid; }
