@@ -1,0 +1,27 @@
+{
+  "name": "web_template_gulp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx gulp dev",
+    "prod": "npx gulp dev --env production",
+    "build": "npx gulp build --env production"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "minimist": "^1.2.5",
+    "node-sass": "^6.0.0",
+    "webpack": "^5.38.1",
+    "webpack-stream": "^6.1.2"
+  },
+  "dependencies": {}
+}

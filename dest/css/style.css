@@ -1,0 +1,10 @@
+body {
+  color: #ddd; }
+  body h1 {
+    font-size: 80px; }
+
+span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
