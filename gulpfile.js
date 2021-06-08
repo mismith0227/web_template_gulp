@@ -1,9 +1,10 @@
-const autoprefixer = require('gulp-autoprefixer')
+const { src, dest, watch, series, parallel } = require('gulp')
+const autoprefixer = require('autoprefixer')
 const browserSync = require('browser-sync')
 const config = require('./config')
 const del = require('del')
-const gulp = require('gulp')
 const plumber = require('gulp-plumber')
+const postcss = require('gulp-postcss')
 const sass = require('gulp-sass')
 const webpackStream = require('webpack-stream')
 const webpack = require('webpack')
@@ -12,40 +13,38 @@ const webpackConfig = require('./webpack.config')
 // HTML
 // =====================================================
 const html = (done) => {
-  gulp
-    .src(`${config.tasks.html.src}`)
-    .pipe(gulp.dest(`${config.tasks.html.dest}`))
+  src(`${config.tasks.html.src}`).pipe(dest(`${config.tasks.html.dest}`))
   done()
 }
 
 // SCSS
 // =====================================================
 const compileScss = (done) => {
-  gulp
-    .src(`${config.tasks.scss.src}`, `!${config.tasks.scss.exc}`)
+  const postcssPlugins = [
+    autoprefixer({
+      cascade: false
+    })
+  ]
+
+  src(`${config.tasks.scss.src}`, `!${config.tasks.scss.exc}`)
     .pipe(plumber())
     .pipe(
       sass({
         outputStyle: config.envProduction ? 'compressed' : 'nested'
       }).on('error', sass.logError)
     )
-    .pipe(
-      autoprefixer({
-        cascade: false
-      })
-    )
-    .pipe(gulp.dest(config.tasks.scss.dest))
+    .pipe(postcss(postcssPlugins))
+    .pipe(dest(config.tasks.scss.dest))
   done()
 }
 
 // webpack
 // =====================================================
 const compileJavascript = (done) => {
-  gulp
-    .src(config.tasks.webpack.src)
+  src(config.tasks.webpack.src)
     .pipe(plumber())
     .pipe(webpackStream(webpackConfig, webpack))
-    .pipe(gulp.dest(config.tasks.webpack.dest))
+    .pipe(dest(config.tasks.webpack.dest))
   done()
 }
 
@@ -65,32 +64,28 @@ const server = (done) => {
 // Watch
 // =====================================================
 const watchFile = (done) => {
-  gulp.watch(config.tasks.watch.html, html).on('change', browserSync.reload)
-  gulp
-    .watch(config.tasks.watch.css, compileScss)
-    .on('change', browserSync.reload)
-  gulp
-    .watch(config.tasks.watch.webpack, compileJavascript)
-    .on('change', browserSync.reload)
+  watch(config.tasks.watch.html, html).on('change', browserSync.reload)
+  watch(config.tasks.watch.css, compileScss).on('change', browserSync.reload)
+  watch(config.tasks.watch.webpack, compileJavascript).on(
+    'change',
+    browserSync.reload
+  )
   done()
 }
 
 // Tasks
 // =====================================================
-exports.default = gulp.series(
-  gulp.parallel(compileScss, html, compileJavascript),
+exports.default = series(
+  parallel(compileScss, html, compileJavascript),
   server,
   watchFile
 )
 
-exports.dev = gulp.series(
+exports.dev = series(
   clean,
-  gulp.parallel(compileScss, html, compileJavascript),
+  parallel(compileScss, html, compileJavascript),
   server,
   watchFile
 )
 
-exports.build = gulp.series(
-  clean,
-  gulp.parallel(compileScss, html, compileJavascript)
-)
+exports.build = series(clean, parallel(compileScss, html, compileJavascript))
