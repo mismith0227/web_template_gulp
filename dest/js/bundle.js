@@ -15,7 +15,7 @@
   \*************************/
 /***/ (function() {
 
-eval("var test = function test() {\n  console.log('test');\n};\n\ntest();\n\n//# sourceURL=webpack://web_template_gulp/./src/js/index.js?");
+eval("const test = () => {\n  console.log('test');\n};\n\ntest();\n\n//# sourceURL=webpack://web_template_gulp/./src/js/index.js?");
 
 /***/ })
 

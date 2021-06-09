@@ -1,15 +1,21 @@
 body {
-  color: #ddd; }
-  body h1 {
-    font-size: 80px; }
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  color: #ddd;
+}
+body h1 {
+  font-size: 80px;
+}
 
 .test {
-  display: -webkit-box;
   display: flex;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+}
 
 .grid {
-  display: grid; }
+  display: grid;
+}

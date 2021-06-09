@@ -3,6 +3,7 @@ const autoprefixer = require('autoprefixer')
 const browserSync = require('browser-sync')
 const config = require('./config')
 const del = require('del')
+const fibers = require('fibers')
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-sass')
@@ -19,6 +20,7 @@ const html = (done) => {
 
 // SCSS
 // =====================================================
+sass.compiler = require('sass')
 const compileScss = (done) => {
   const postcssPlugins = [
     autoprefixer({
@@ -30,7 +32,8 @@ const compileScss = (done) => {
     .pipe(plumber())
     .pipe(
       sass({
-        outputStyle: config.envProduction ? 'compressed' : 'nested'
+        outputStyle: config.envProduction ? 'compressed' : 'expanded',
+        fiber: fibers
       }).on('error', sass.logError)
     )
     .pipe(postcss(postcssPlugins))
