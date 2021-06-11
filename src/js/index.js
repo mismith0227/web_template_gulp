@@ -1,5 +1,3 @@
-const test = () => {
-  console.log('test')
-}
+import { Buttons } from './buttons'
 
-test()
+Buttons()
