@@ -17,6 +17,13 @@ body {
   display: grid;
 }
 
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
 .loading {
   display: flex;
   justify-content: space-between;
@@ -79,4 +86,31 @@ body {
 
 .bar3 {
   animation: 0.5s linear infinite alternate barAnimation1;
+}
+
+.line-loading {
+  position: relative;
+  width: 100%;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #000);
+  animation: animate1 1.5s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  40% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }

@@ -20,6 +20,13 @@ body h1 {
   display: grid;
 }
 
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
 .loading {
   display: flex;
   justify-content: space-between;
@@ -116,4 +123,44 @@ body h1 {
 .bar3 {
   -webkit-animation: 0.5s linear infinite alternate barAnimation1;
   animation: 0.5s linear infinite alternate barAnimation1;
+}
+
+.line-loading {
+  position: relative;
+  width: 100%;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #000);
+  -webkit-animation: animate1 1.5s linear infinite;
+  animation: animate1 1.5s linear infinite;
+}
+
+@-webkit-keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  40% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  40% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
