@@ -31,25 +31,22 @@
     display: block;
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
-    margin: auto;
-    width: 400px;
-    height: 400px;
-    border-radius: 9999px;
-    background-color: #333;
+    background: #000;
     z-index: -1;
-    transform: translate3d(-50%, -50%, 0) scale(0);
-    opacity: 0;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: top right;
   }
 
   &:hover {
     color: #fff;
-    transition: 1s;
 
     &::before {
-      opacity: 1;
-      transform: translate3d(-50%, -50%, 0) scale(3);
-      transition: transform 1.5s;
+      transform: scaleX(1);
+      transform-origin: top left;
     }
   }
 }
