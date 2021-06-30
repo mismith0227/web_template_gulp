@@ -1,0 +1,35 @@
+#waveCanvas {
+  width: 100%;
+}
+
+.svg-wrap {
+  margin: 120px 0 0;
+}
+
+.tonton3 {
+  width: 100%;
+}
+
+svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.wave {
+  animation: wave 3s linear;
+  animation-iteration-count: infinite;
+  fill: #4478e3;
+}
+.gooeff {
+  filter: url(#goo);
+}
+#wave2 {
+  animation-duration: 5s;
+  animation-direction: reverse;
+  opacity: 0.6;
+}
+@keyframes wave {
+  100% {
+    transform: translateX(-100%);
+  }
+}

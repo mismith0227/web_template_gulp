@@ -80,8 +80,52 @@ body {
   border-image-width: 3px;
 }
 
-body {
-  color: #ddd;
+#waveCanvas {
+  width: 100%;
+}
+
+.svg-wrap {
+  margin: 120px 0 0;
+}
+
+.tonton3 {
+  width: 100%;
+}
+
+svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.wave {
+  -webkit-animation: wave 3s linear;
+  animation: wave 3s linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  fill: #4478e3;
+}
+
+.gooeff {
+  filter: url(#goo);
+}
+
+#wave2 {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  animation-direction: reverse;
+  opacity: 0.6;
+}
+
+@-webkit-keyframes wave {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes wave {
+  100% {
+    transform: translateX(-100%);
+  }
 }
 body h1 {
   font-size: 80px;

@@ -1,9 +1,8 @@
 @use './base.scss';
 @use './buttons.scss';
+@use './svg.scss';
 
 body {
-  color: #ddd;
-
   h1 {
     font-size: 80px;
   }

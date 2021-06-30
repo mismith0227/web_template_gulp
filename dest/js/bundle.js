@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _buttons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./buttons */ \"./src/js/buttons.js\");\n\n(0,_buttons__WEBPACK_IMPORTED_MODULE_0__.Buttons)();\n\n//# sourceURL=webpack://web_template_gulp/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _buttons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./buttons */ \"./src/js/buttons.js\");\n/* harmony import */ var _wave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wave */ \"./src/js/wave.js\");\n\n\n(0,_buttons__WEBPACK_IMPORTED_MODULE_0__.Buttons)(); // Wave()\n\n//# sourceURL=webpack://web_template_gulp/./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/wave.js":
+/*!************************!*\
+  !*** ./src/js/wave.js ***!
+  \************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Wave\": function() { return /* binding */ Wave; }\n/* harmony export */ });\nconst Wave = () => {\n  let unit = 100;\n  let canvas;\n  let context;\n  let height;\n  let width;\n  let xAxis;\n  let yAxis;\n\n  function init() {\n    canvas = document.getElementById('waveCanvas');\n    canvas.width = document.documentElement.clientWidth;\n    canvas.height = 300;\n    context = canvas.getContext('2d');\n    height = canvas.height;\n    width = canvas.width;\n    xAxis = Math.floor(height / 2);\n    yAxis = 0;\n    draw();\n  }\n\n  function draw() {\n    context.clearRect(0, 0, width, height);\n    drawWave('#000', 1, 3, 0);\n    draw.seconds = draw.seconds + 0.009;\n    draw.t = draw.seconds * Math.PI;\n    setTimeout(draw, 35);\n  }\n\n  draw.seconds = 0;\n  draw.t = 0;\n\n  function drawWave(color, alpha, zoom, delay) {\n    context.fillStyle = color;\n    context.globalAlpha = alpha;\n    context.beginPath();\n    drawSine(draw.t / 0.5, zoom, delay);\n    context.lineTo(width + 10, height);\n    context.lineTo(0, height);\n    context.closePath();\n    context.fill();\n  }\n\n  function drawSine(t, zoom, delay) {\n    let x = t;\n    let y = Math.sin(x) / zoom;\n    context.moveTo(yAxis, unit * y + xAxis);\n\n    for (let i = yAxis; i <= width + 10; i += 10) {\n      x = t + (-yAxis + i) / unit / zoom;\n      y = Math.sin(x - delay) / 3;\n      context.lineTo(i, unit * y + xAxis);\n    }\n  }\n\n  init();\n};\n\n//# sourceURL=webpack://web_template_gulp/./src/js/wave.js?");
 
 /***/ })
 

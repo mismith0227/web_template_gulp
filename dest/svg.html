@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- <canvas id="waveCanvas"></canvas> -->
+    <!-- <svg
+      class="svgAnimation start"
+      xmlns="http://www.w3.org/2000/svg"
+      width="650"
+      height="80"
+      viewBox="0 0 650 50"
+    >
+      <style>
+        .start {
+          stroke: black;
+          stroke-dasharray: 220;
+          stroke-width: 1;
+          fill: transparent;
+          animation: line 3000ms ease-out infinite forwards;
+        }
+        @keyframes line {
+          0% {
+            stroke-dashoffset: 220;
+          }
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+      </style>
+      <text
+        x="0"
+        y="50"
+        font-family="Verdana"
+        font-size="50"
+        font-weight="bold"
+      >
+        ABC
+      </text>
+    </svg> -->
+
+    <!-- <svg
+      id="tonton3"
+      width="300px"
+      height="150px"
+      viewBox="0 0 300 150"
+      style="enable-background: new 0 0 300 150"
+      xml:space="preserve"
+    >
+      <path
+        id="stroke"
+        fill="none"
+        stroke="#dddddd"
+        stroke-width="0.1rem"
+        d="M0,0c0,0,10.2,108,62.7,129.7s111.5-48.1,153.7-84.1c39.9-34,60-21.7,60-2.2c0,28.8-31.1,58.9-97.6,46.7
+      C113.5,78.1,0,0,0,0z"
+      />
+      <circle cx="0" cy="0" r="20">
+        <animateMotion dur="3s" calcMode="linear" repeatCount="indefinite">
+          <mpath xlink:href="#stroke" />
+        </animateMotion>
+      </circle>
+    </svg> -->
+
+    <!-- <div class="svg-wrap">
+      <svg id="tonton3" viewBox="0 0 300 150" xml:space="preserve">
+        <path
+          id="stroke"
+          fill="none"
+          stroke="#dddddd"
+          stroke-width="1px"
+          d="M20,0 L280,0 280,150 20,150 Z20,0"
+        />
+      </svg>
+    </div> -->
+
+    <svg viewBox="0 0 120 28">
+      <defs>
+        <!-- <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="
+                1 0 0 0 0  
+                0 1 0 0 0  
+                0 0 1 0 0  
+                0 0 0 13 -9"
+            result="goo"
+          />
+        </filter> -->
+        <path
+          id="wave"
+          d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z"
+        />
+      </defs>
+      <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
+    </svg>
+
+    <script type="text/javascript" src="./js/bundle.js"></script>
+  </body>
+</html>
