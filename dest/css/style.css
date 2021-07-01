@@ -98,22 +98,22 @@ svg {
 }
 
 .wave {
-  -webkit-animation: wave 3s linear;
-  animation: wave 3s linear;
+  -webkit-animation: wave 3s cubic-bezier(0.55, 0.5, 0.45, 0.5);
+  animation: wave 3s cubic-bezier(0.55, 0.5, 0.45, 0.5);
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  fill: #4478e3;
-}
-
-.gooeff {
-  filter: url(#goo);
+  fill: #fff;
 }
 
 #wave2 {
   -webkit-animation-duration: 5s;
   animation-duration: 5s;
   animation-direction: reverse;
-  opacity: 0.6;
+  opacity: 0.7;
+  -webkit-animation-delay: -3s;
+  animation-delay: -3s;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
 }
 
 @-webkit-keyframes wave {
@@ -127,6 +127,22 @@ svg {
     transform: translateX(-100%);
   }
 }
+.wrap {
+  position: relative;
+}
+
+.svg-title {
+  position: absolute;
+  font-size: 64px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  z-index: 100;
+  width: 100%;
+  padding-bottom: 120px;
+}
+
 body h1 {
   font-size: 80px;
 }
