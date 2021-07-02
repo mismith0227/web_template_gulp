@@ -114,3 +114,31 @@ body {
     left: 100%;
   }
 }
+
+.box {
+  display: block;
+  background-color: #000;
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+}
+
+.scroll-section {
+  height: 700px;
+}
+
+.slide-box {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+}
