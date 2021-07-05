@@ -27,6 +27,7 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
-    "gsap": "^3.7.0"
+    "gsap": "^3.7.0",
+    "three": "^0.130.0"
   }
 }

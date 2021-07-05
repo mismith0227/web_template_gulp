@@ -2,8 +2,14 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js'
 import { Buttons } from './buttons'
 import { Wave } from './wave'
+import { ThreeSample } from './ThreeSample'
 
 Buttons()
+
+const container = document.getElementById('canvas-container')
+if (container) {
+  ThreeSample()
+}
 
 // Wave()
 
