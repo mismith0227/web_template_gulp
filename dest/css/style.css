@@ -143,6 +143,48 @@ svg {
   padding-bottom: 120px;
 }
 
+.scroll-effect {
+  position: relative;
+}
+.scroll-effect section {
+  height: 100vh;
+}
+.scroll-effect section:nth-child(odd) {
+  background-color: #eee;
+}
+.scroll-effect .year {
+  display: flex;
+  font-size: 80px;
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  font-weight: bold;
+  overflow: hidden;
+}
+.scroll-effect .first-digit-num {
+  display: inline-block;
+}
+.scroll-effect .box-wrap {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  bottom: 15%;
+  right: 15%;
+  overflow: hidden;
+}
+.scroll-effect .number {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 0 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 80px;
+}
+
 body h1 {
   font-size: 80px;
 }

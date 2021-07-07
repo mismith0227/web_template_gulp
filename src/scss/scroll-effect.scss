@@ -1,0 +1,46 @@
+.scroll-effect {
+  position: relative;
+
+  section {
+    height: 100vh;
+
+    &:nth-child(odd) {
+      background-color: #eee;
+    }
+  }
+  .year {
+    display: flex;
+    font-size: 80px;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    font-weight: bold;
+    overflow: hidden;
+  }
+
+  .first-digit-num {
+    display: inline-block;
+  }
+
+  .box-wrap {
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    bottom: 15%;
+    right: 15%;
+    overflow: hidden;
+  }
+
+  .number {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 0 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 80px;
+  }
+}

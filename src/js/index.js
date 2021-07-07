@@ -2,7 +2,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js'
 import { Buttons } from './buttons'
 import { Wave } from './wave'
-import { ThreeSample } from './ThreeSample'
+import { ThreeSample } from './threeSample'
+import { ScrollEffect } from './scrolleffect'
 
 Buttons()
 
@@ -10,6 +11,8 @@ const container = document.getElementById('canvas-container')
 if (container) {
   ThreeSample()
 }
+
+ScrollEffect()
 
 // Wave()
 
@@ -49,7 +52,6 @@ gsap.registerEffect({
   name: 'wordFadeIn',
   defaults: { duration: 2 },
   effect: (targets, config) => {
-    console.log(config)
     return gsap.timeline().to(targets, {
       y: 0,
       opacity: 1,
