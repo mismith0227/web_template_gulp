@@ -15,6 +15,7 @@ jobs:
           ref: master
 
       - name: Create new Branch
+        working-directory: ./dist
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
