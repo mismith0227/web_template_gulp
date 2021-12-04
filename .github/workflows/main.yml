@@ -18,6 +18,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
+          yarn
+          yarn build
           rm -rf .git
           git init
           git config --global user.email "ci@example.com"
@@ -38,13 +40,13 @@ jobs:
           bin
           gulpfile.js
           .prettierignore
+          .prettierrc
           config.js
           node_modules
           content
           package.json
           svgpack
           tmp
-          src
           config.toml
           yarn.lock
           renovate.json
