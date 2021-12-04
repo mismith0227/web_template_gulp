@@ -49,6 +49,7 @@ jobs:
             echo "config.toml" >> .gitignore
             echo "yarn.lock" >> .gitignore
             echo "renovate.json" >> .gitignore
+            echo ".prettierrc" >> .gitignore
             echo "!/exampleSite/config.toml" >> .gitignore
             echo "!/exampleSite/content" >> .gitignore
             echo "!/exampleSite/static" >> .gitignore
