@@ -22,6 +22,7 @@ jobs:
           git config --global user.email "ci@example.com"
           git config --global user.name "CI Action"
           git rm --cached -r * 
+          git rm --cached -r .*
           if [[ ! -f .gitignore ]]; then
             # Make sure .gitignore exists
             touch .gitignore
