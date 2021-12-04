@@ -21,10 +21,8 @@ jobs:
 
       - name: Pusher
         run: |
-          then
-            git add .
-            git commit -m "github actions is pushed"
-          fi
+          git add .
+          git commit -m "github actions is pushed"
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
