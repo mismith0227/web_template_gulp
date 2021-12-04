@@ -22,9 +22,9 @@ jobs:
       - name: Pusher
         run: |
           git add .
-          git commit -m "github actions is pushed"
+          git commit --quiet -m "github actions is pushed"
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Push
-        run: git push
+        run: git push master:release
