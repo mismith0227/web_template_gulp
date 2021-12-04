@@ -28,28 +28,27 @@ jobs:
           fi
           if ! grep -q .ci-tools .gitignore; then
             # Add .ci-tools to .gitignore
-            echo "
-            gulpfile.js
-            .editorconfig
-            .travis.yml
-            .gitignore
-            .babelrc
-            ./images
-            webpack.config.js
-            bin
-            src
-            .prettierignore
-            config.js
-            node_modules
-            content
-            package.json
-            svgpack
-            tmp
-            config.toml
-            yarn.lock
-            renovate.json
-            !/exampleSite/config.toml
-            !/exampleSite/content
+            echo -e "src\n
+            .editorconfig\n
+            .travis.yml\n
+            .gitignore\n
+            .babelrc\n
+            ./images\n
+            webpack.config.js\n
+            bin\n
+            gulpfile.js\n
+            .prettierignore\n
+            config.js\n
+            node_modules\n
+            content\n
+            package.json\n
+            svgpack\n
+            tmp\n
+            config.toml\n
+            yarn.lock\n
+            renovate.json\n
+            !/exampleSite/config.toml\n
+            !/exampleSite/content\n
             !/exampleSite/static" >> .gitignore
           fi
           git add .
