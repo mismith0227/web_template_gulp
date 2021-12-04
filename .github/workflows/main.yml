@@ -28,7 +28,8 @@ jobs:
           fi
           if ! grep -q .ci-tools .gitignore; then
             # Add .ci-tools to .gitignore
-            echo "gulpfile.js
+            echo "
+            gulpfile.js
             .editorconfig
             .travis.yml
             .gitignore
