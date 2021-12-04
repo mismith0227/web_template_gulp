@@ -20,7 +20,6 @@ jobs:
         run: |
           git checkout -b release
           rm -rf .git
-          rm -r .gitignore
           git config --global user.email "ci@example.com"
           git config --global user.name "CI Action"
           if [[ ! -f .gitignore ]]; then
