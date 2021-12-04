@@ -44,7 +44,6 @@ jobs:
             package.json
             svgpack
             tmp
-            src
             config.toml
             yarn.lock
             renovate.json
