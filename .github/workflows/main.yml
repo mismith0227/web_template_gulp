@@ -15,7 +15,8 @@ jobs:
           ref: master
 
       - name: create git ignore
-        uses: actions/checkout@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           rm -rf .git
           rm -r .gitignore
