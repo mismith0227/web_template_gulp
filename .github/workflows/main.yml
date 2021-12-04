@@ -28,7 +28,7 @@ jobs:
           fi
           if ! grep -q .ci-tools .gitignore; then
             # Add .ci-tools to .gitignore
-            echo "src
+            echo "
             .editorconfig
             .travis.yml
             .gitignore
