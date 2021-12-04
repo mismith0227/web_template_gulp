@@ -18,7 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          rm .git
+          git rm --cache *
           git init
           git config --global user.email "ci@example.com"
           git config --global user.name "CI Action"
