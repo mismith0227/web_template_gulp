@@ -28,7 +28,7 @@ jobs:
           fi
           if ! grep -q .ci-tools .gitignore; then
             # Add .ci-tools to .gitignore
-            echo "src
+            echo "gulpfile.js
             .editorconfig
             .travis.yml
             .gitignore
@@ -36,7 +36,7 @@ jobs:
             ./images
             webpack.config.js
             bin
-            gulpfile.js
+            src
             .prettierignore
             config.js
             node_modules
