@@ -2,7 +2,7 @@ name: create new branch
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -18,33 +18,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          yarn
-          yarn run build
-          rm -rf .git
-          rm -r .gitignore
-
-          echo ".bowerrc
-          .editorconfig
-          .travis.yml
-          .gitignore
-          .babelrc
-          ./images
-          webpack.config.js
-          bin
-          gulpfile.js
-          .prettierignore
-          config.js
-          node_modules
-          content
-          package.json
-          svgpack
-          tmp
-          src
-          config.toml
-          yarn.lock
-          renovate.json
-          !/exampleSite/config.toml
-          !/exampleSite/content
-          !/exampleSite/static" > .gitignore
           git checkout -b release
           git push origin release
