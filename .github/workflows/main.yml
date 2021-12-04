@@ -14,10 +14,11 @@ jobs:
         with:
           ref: master
 
-      - name: create git ignore
+      - name: Create new Branch
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
+          git checkout -b release
           echo ".bowerrc
           .editorconfig
           .travis.yml
@@ -41,10 +42,4 @@ jobs:
           !/exampleSite/config.toml
           !/exampleSite/content
           !/exampleSite/static" > .gitignore
-
-      - name: Create new Branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: |
-          git checkout -b release
           git push origin release
