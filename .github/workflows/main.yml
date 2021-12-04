@@ -14,10 +14,19 @@ jobs:
         with:
           ref: master
 
-      - name: Create new Branch
+      - name: Config
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+      - name: Pusher
+        run: |
+          then
+            git add .
+            git commit -m "github actions is pushed"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: |
-          git add .
-          git commit -m "${REF} is pushed"
-          git push
+
+      - name: Push
+        run: git push
