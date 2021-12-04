@@ -18,7 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          git checkout -b release
+          git checkout -b release2
           git config --global user.email "ci@example.com"
           git config --global user.name "CI Action"
           if [[ ! -f .gitignore ]]; then
