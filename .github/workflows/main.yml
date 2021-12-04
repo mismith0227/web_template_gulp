@@ -21,7 +21,7 @@ jobs:
           git init
           git config --global user.email "ci@example.com"
           git config --global user.name "CI Action"
-          git rm src
+          git rm -r src 
           if [[ ! -f .gitignore ]]; then
             # Make sure .gitignore exists
             touch .gitignore
