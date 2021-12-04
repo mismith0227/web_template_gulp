@@ -51,6 +51,7 @@ jobs:
             !/exampleSite/content
             !/exampleSite/static" >> .gitignore
           fi
+          git init
           git add .
           git commit -m "Deploy from Github Actions"
           git push --force origin release
