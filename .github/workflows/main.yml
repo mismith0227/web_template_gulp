@@ -18,6 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
+          git checkout -b release
           git config --global user.email "ci@example.com"
           git config --global user.name "CI Action"
           if [[ ! -f .gitignore ]]; then
@@ -52,4 +53,4 @@ jobs:
           fi
           git add .
           git commit -m "Deploy from Github Actions"
-          git push --force origin release
+          git push --force master:release
