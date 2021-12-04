@@ -53,5 +53,5 @@ jobs:
           fi
           git init
           git add .
-          git commit --quiet -m "Deploy from Github Actions"
-          git push --force --quiet "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" master:release
+          git commit -m "Deploy from Github Actions"
+          git push --force origin release
