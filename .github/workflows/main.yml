@@ -28,28 +28,30 @@ jobs:
           fi
           if ! grep -q .ci-tools .gitignore; then
             # Add .ci-tools to .gitignore
-            echo -e "src\n
-            .editorconfig\n
-            .travis.yml\n
-            .gitignore\n
-            .babelrc\n
-            ./images\n
-            webpack.config.js\n
-            bin\n
-            gulpfile.js\n
-            .prettierignore\n
-            config.js\n
-            node_modules\n
-            content\n
-            package.json\n
-            svgpack\n
-            tmp\n
-            config.toml\n
-            yarn.lock\n
-            renovate.json\n
-            !/exampleSite/config.toml\n
-            !/exampleSite/content\n
-            !/exampleSite/static" >> .gitignore
+            echo "src" >> .gitignore
+            echo ".editorconfig" >> .gitignore
+            echo ".travis.yml" >> .gitignore
+            echo ".gitignore" >> .gitignore
+            echo ".babelrc" >> .gitignore
+            echo "./images" >> .gitignore
+            echo "webpack.config.js" >> .gitignore
+            echo "bin" >> .gitignore
+            echo "gulpfile.js" >> .gitignore
+            echo ".prettierignore" >> .gitignore
+            echo "config.js" >> .gitignore
+            echo "node_modules" >> .gitignore
+            echo "content" >> .gitignore
+            echo "package.json" >> .gitignore
+            echo "svgpack" >> .gitignore
+            echo ".prettierignore" >> .gitignore
+            echo "tmp" >> .gitignore
+            echo ".prettierignore" >> .gitignore
+            echo "config.toml" >> .gitignore
+            echo "yarn.lock" >> .gitignore
+            echo "renovate.json" >> .gitignore
+            echo "!/exampleSite/config.toml" >> .gitignore
+            echo "!/exampleSite/content" >> .gitignore
+            echo "!/exampleSite/static" >> .gitignore
           fi
           git add .
           git checkout -b release
