@@ -54,4 +54,4 @@ jobs:
           fi
           git add .
           git commit -m "Deploy from Github Actions"
-          git push --force origin release
+          git push --force master release
