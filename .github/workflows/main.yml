@@ -52,6 +52,6 @@ jobs:
             !/exampleSite/static" >> .gitignore
           fi
 
-          git add -A
+          git add .
           git commit -m "Deploy from Github Actions"
           git push --force origin release
