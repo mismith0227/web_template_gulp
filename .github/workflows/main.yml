@@ -25,29 +25,32 @@ jobs:
             # Make sure .gitignore exists
             touch .gitignore
           fi
-          echo ".bowerrc
-          .editorconfig
-          .travis.yml
-          .gitignore
-          .babelrc
-          ./images
-          webpack.config.js
-          bin
-          gulpfile.js
-          .prettierignore
-          config.js
-          node_modules
-          content
-          package.json
-          svgpack
-          tmp
-          src
-          config.toml
-          yarn.lock
-          renovate.json
-          !/exampleSite/config.toml
-          !/exampleSite/content
-          !/exampleSite/static" >> .gitignore
+          if ! grep -q .ci-tools .gitignore; then
+            # Add .ci-tools to .gitignore
+            echo "src
+            .editorconfig
+            .travis.yml
+            .gitignore
+            .babelrc
+            ./images
+            webpack.config.js
+            bin
+            gulpfile.js
+            .prettierignore
+            config.js
+            node_modules
+            content
+            package.json
+            svgpack
+            tmp
+            src
+            config.toml
+            yarn.lock
+            renovate.json
+            !/exampleSite/config.toml
+            !/exampleSite/content
+            !/exampleSite/static" >> .gitignore
+          fi
           git init
           git add .
           git commit --quiet -m "Deploy from Github Actions"
