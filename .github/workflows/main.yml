@@ -35,28 +35,24 @@ jobs:
           if ! grep -q .ci-tools .gitignore; then
             # Add .ci-tools to .gitignore
             echo "src
-          .editorconfig
-          .travis.yml
+          .browserslistrc
+          .github
+          .storybook
           .gitignore
           .babelrc
-          ./images
+          .stylelintrc.json
           webpack.config.js
-          bin
+          babel.config.js
+          config.js
           gulpfile.js
           .prettierignore
           .prettierrc
-          config.js
           node_modules
-          content
+          setting-site.json
+          settings.js
           package.json
-          svgpack
-          tmp
-          config.toml
           yarn.lock
-          renovate.json
-          !/exampleSite/config.toml
-          !/exampleSite/content
-          !/exampleSite/static" >> .gitignore
+          renovate.json" >> .gitignore
           fi
           git add .
           git commit -m "Deploy from Github Actions"

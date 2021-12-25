@@ -1,4 +1,4 @@
-## web template
+# web template ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mismith0227/web_template_gulp/create%20new%20branch?style=flat-square)
 
 開発環境構築パターン作成の元になるブランチ
 Scss のコンパイル、JS のバンドル、画像圧縮
