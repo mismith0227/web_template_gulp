@@ -13,48 +13,50 @@ const production = options.env === 'production'
 const config = {
   dirs: {
     src: './src',
-    dest: './dest'
+    dist: './dist',
+    baseDir: './dist'
   },
   envProduction: production
 }
 
 const tasks = {
-  html: {
-    src: `${config.dirs.src}/html/**/*.html`,
-    dest: `${config.dirs.dest}`
+  ejs: {
+    src: `${config.dirs.src}/ejs/**/*.ejs`,
+    dist: `${config.dirs.dist}/`,
+    exc: `${config.dirs.src}/ejs/**/_*.ejs`
   },
   scss: {
     src: `${config.dirs.src}/scss/style.scss`,
-    dest: `${config.dirs.dest}/css`
+    dist: `${config.dirs.dist}/assets/css`
   },
   webpack: {
     src: `${config.dirs.src}/js/index.js`,
-    dest: `${config.dirs.dest}/js`,
+    dist: `${config.dirs.dist}/assets/js`,
     filename: 'bundle.js'
   },
   watch: {
-    html: [`${config.dirs.src}/html/**/*.html`],
+    ejs: [`${config.dirs.src}/ejs/**/*.ejs`],
     css: [`${config.dirs.src}/scss/**/*.scss`],
-    image: [`${config.dirs.src}/img/**/*`],
+    image: [`${config.dirs.src}/images/**/*`],
     webpack: [`${config.dirs.src}/js/**/*.js`]
   },
   images: {
-    src: `${config.dirs.src}/images/**/*`,
-    dest: `${config.dirs.dest}/images`
+    src: `${config.dirs.src}/images`,
+    dist: `${config.dirs.dist}/assets/images`
   },
   fonts: {
     src: `${config.dirs.src}/fonts/**/*`,
-    dest: `${config.dirs.dest}/fonts`
+    dist: `${config.dirs.dist}/assets/fonts`
   },
   server: {
     browserSyncOptions: {
       server: {
-        baseDir: `${config.dirs.dest}`
+        baseDir: `${config.dirs.baseDir}`
       },
       open: 'external'
     }
   },
-  clean: [config.dirs.dest]
+  clean: [config.dirs.dist]
 }
 
 config.tasks = tasks

@@ -1,0 +1,35 @@
+<%
+// define
+const metaData = (typeof meta === 'undefined') ? '' : meta;
+
+// title
+const title = (typeof metaData.title === 'undefined') ? '' : metaData.title;
+
+// article title
+const articleTitle = (typeof metaData.articleTitle === 'undefined') ? '' : metaData.articleTitle;
+
+// sub title
+const hierarchy = (typeof metaData.hierarchy === 'undefined') ? '' : metaData.hierarchy;
+%>
+
+<div>
+  <ul>
+    <li>
+      <a href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      </a>
+    </li>
+    <% if (hierarchy.length > 0) { %>
+      <% hierarchy.forEach((value, key) => { %>
+        <li><a href="/<%= value.link %>"><%= value.title %></a></li>
+      <% }); %>
+    <% } %>
+    <li>
+      <% if (metaData.articleTitle) { %>
+        <%= articleTitle %>
+      <% } else { %>
+        <%= title %>
+      <% } %>
+    </li>
+  </ul>
+</div>
