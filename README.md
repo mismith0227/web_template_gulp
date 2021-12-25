@@ -20,6 +20,9 @@ yarn build
 
 // storybook
 yarn storybook
+
+// style lint
+yarn lint:css
 ```
 
 ## ディレクトリ構成
