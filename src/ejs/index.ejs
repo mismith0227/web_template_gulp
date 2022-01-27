@@ -1,0 +1,17 @@
+<%
+// dir
+const dir = './'
+
+// pageData
+const pageData = {
+  pageName: 'p-top',
+  title:'sample title',
+  description:'sample description',
+};
+%>
+
+<%- include(dir + 'inc/_head', { meta: pageData }) %>
+
+<p>main content</p>
+
+<%- include(dir + 'inc/_footer') %>
